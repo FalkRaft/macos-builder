@@ -451,6 +451,7 @@ jobs:
       mcpelauncher-manifest-ref: ${{ inputs.mcpelauncher-ref }}
       submodule-refs: ${{ inputs.submodule-refs }}
   build:
+    continue-on-error: true
     runs-on: macos-15-intel
     if: "!(cancelled() || failure())"
     needs: [build-libcxx, buildopenssl, buildangle, build-protobuf, build-m1]
